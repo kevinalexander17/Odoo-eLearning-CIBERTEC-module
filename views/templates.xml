@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+
+        <template id="index">
+         <t t-call="website.layout">
+            <t t-set="title">Cibertec courses</t>
+              
+               <div class="oe_structure">
+                 <div class="container">
+                    <t t-foreach="courses" t-as="course">
+                       <h3><t t-esc="course.id"/><t t-esc="course.name"/></h3>
+                    </t>
+                 </div>
+               </div>
+         </t> 
+        </template>
+
+    </data>
+</odoo>

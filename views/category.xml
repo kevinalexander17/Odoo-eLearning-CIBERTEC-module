@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    <record model="ir.ui.view" id="category_form_view">
+			<field name="name">category.form</field>
+			<field name="model">cibertec.category</field>
+			<field name="arch" type="xml">
+				<form string="Category form">
+					<sheet>
+						<div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Título de Categoría"/>
+                            <h2><field name="name" default_focus="1" placeholder="Categoría..."/></h2>
+                        </div>
+						<div>
+                            <field name="active_id" invisible="1"/>
+                            <label for="name" class="oe_edit_only" string="Descripción"/>
+                            <field name="description" placeholder="Esto es un ejemplo de descripción"/>
+                        </div>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="cibertec_category_list_action">
+			<field name="name">Categories</field>
+			<field name="res_model">cibertec.category</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Hey! crea tu primera categoría!
+				</p>
+			</field>
+		</record>
+		
+		
+		<menuitem name="Categoría" id="category_menu" parent="cibertec_elearning_menu" action="cibertec_category_list_action"/>
+        
+    
+    </data>
+    
+
+</odoo>

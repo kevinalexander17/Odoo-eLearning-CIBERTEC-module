@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+course_manager,course manager,model_cibertec_course,group_manager,1,1,1,1
+content_manager,content manager,model_cibertec_content,group_manager,1,1,1,1
+tag_manager,tag manager,model_cibertec_tag,group_manager,1,1,1,1
+category_manager,category manager,model_cibertec_category,group_manager,1,1,1,1
+studentpro_manager,progress manager,model_cibertec_progress,group_manager,1,1,1,1
+contentpro_manager,contentpro manager,model_cibertec_contentpro,group_manager,1,1,1,1
+course_read_all,course all,model_cibertec_course,,1,0,0,0
+content_read_all,content all,model_cibertec_content,,1,0,0,0
+tag_read_all,tag all,model_cibertec_tag,,1,0,0,0
+category_read_all,category all,model_cibertec_category,,1,0,0,0
+studentpro_read_all,progress all,model_cibertec_progress,,1,0,0,0
+contentpro_read_all,contentpro all,model_cibertec_contentpro,,1,0,0,0

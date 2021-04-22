@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+    <record model="ir.ui.view" id="partner_cibertec_course_form_view">
+      <field name="name">partner.student</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+      
+            <notebook position="inside">
+            
+                <page string="Cursos Asignados">
+                    <group>
+                          <field name="student"/> 
+                          <field name="course_ids"/>
+                   </group>
+                   <group>
+                         <field name="student_content_progress">
+                        <tree editable="bottom">
+                            <field name="course_id" domain="[('id','in',parent.course_ids)]"/>
+                            <field name="content_id" doamin="[('course_id.id,'=',course_id.id)]"/>
+                            <field name="student_id" invisible="1"/>
+                            <field name="content_is_done" string="Realizado"/>
+                        </tree>
+                        </field>
+                   </group>
+                </page> 
+                <page string="Progreso de Curso">
+                    <field name="student_progress_ids">
+                    <tree >
+                    <field name="course_id"/>
+                    <field name="content_done_count" string="Contenidos Realizado"/>
+                    <field name="progress" widget="progressbar" string="Progreso"/>
+                    </tree>
+                    </field>
+                    
+                </page>
+            </notebook> 
+       </field>
+</record>
+
+
+ <!--PARTNER ACTION -->
+  <record model="ir.actions.act_window" id="student_list_action"> 
+  <field name="name">student</field>
+  <field name="res_model">res.partner</field>
+  <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem name="Usuario" id="student_menu" parent="cibertec_elearning_config_menu" action="student_list_action"/>
+
+    </data>
+</odoo>
