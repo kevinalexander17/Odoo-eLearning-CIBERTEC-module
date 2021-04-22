@@ -5,7 +5,7 @@
 			<field name="name">content.form</field>
 			<field name="model">cibertec.content</field>
 			<field name="arch" type="xml">
-            <form string="Lesson">
+            <form>
                     <sheet>
                         <div class="oe_title">
                             <div>
@@ -18,7 +18,7 @@
                         
                         </div>
                         <notebook>
-                            <page string="Documento">
+                            <page string="Detalles">
                                 <group>
                                         <group name="Detalles de la clase">
                                             <field name="active_id" invisible="1"/>
@@ -38,10 +38,11 @@
                                                     <field name="duration" widget="float_time" class="oe_inline"/>
                                                     <span> Horas</span>
                                                 </div>
-                                                <field name="date_published" string="Fecha Registrada" readonly="1"
-                                                attrs="{'invisible': [('date_published', '=', False)]}" 
+                                               <field name="date_c" string="Fecha Registrada" 
+                                                attrs="{'invisible': [('date_c', '=', False)]}" 
                                                 groups="base.group_no_one"/>
                                        </group>
+                                       
                                 </group>
                             </page>
                             <page  string="Descripción">

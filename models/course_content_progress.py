@@ -86,7 +86,7 @@ class Content(models.Model):
     active_id = fields.Boolean(default=True, string="Activo")
     course_id = fields.Many2one('cibertec.course',required=True,string="Cursos")
     risponsible_ids = fields.Many2one('res.partner',ondelete="set null", index=True,string="Responsable")
-    date_published = fields.Date(default=fields.Date.today)
+    date_c = fields.Date(default=fields.Date.today)
     datas = fields.Binary(string="Adjunto")
     url = fields.Binary()
     description = fields.Text()
